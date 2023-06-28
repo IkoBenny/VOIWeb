@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewVehicleOfInterestTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewVehicleOfInterestLabel_licensePlate}"/>
+                    <h:outputText value="#{vehicleOfInterestController.selected.licensePlate}" title="#{bundle.ViewVehicleOfInterestTitle_licensePlate}"/>
+                    <h:outputText value="#{bundle.ViewVehicleOfInterestLabel_vehYear}"/>
+                    <h:outputText value="#{vehicleOfInterestController.selected.vehYear}" title="#{bundle.ViewVehicleOfInterestTitle_vehYear}"/>
+                    <h:outputText value="#{bundle.ViewVehicleOfInterestLabel_color}"/>
+                    <h:outputText value="#{vehicleOfInterestController.selected.color}" title="#{bundle.ViewVehicleOfInterestTitle_color}"/>
+                    <h:outputText value="#{bundle.ViewVehicleOfInterestLabel_ownersName}"/>
+                    <h:outputText value="#{vehicleOfInterestController.selected.ownersName}" title="#{bundle.ViewVehicleOfInterestTitle_ownersName}"/>
+                    <h:outputText value="#{bundle.ViewVehicleOfInterestLabel_ownersPhone}"/>
+                    <h:outputText value="#{vehicleOfInterestController.selected.ownersPhone}" title="#{bundle.ViewVehicleOfInterestTitle_ownersPhone}"/>
+                    <h:outputText value="#{bundle.ViewVehicleOfInterestLabel_reason}"/>
+                    <h:outputText value="#{vehicleOfInterestController.selected.reason}" title="#{bundle.ViewVehicleOfInterestTitle_reason}"/>
+                    <h:outputText value="#{bundle.ViewVehicleOfInterestLabel_make}"/>
+                    <h:outputText value="#{vehicleOfInterestController.selected.make}" title="#{bundle.ViewVehicleOfInterestTitle_make}"/>
+                    <h:outputText value="#{bundle.ViewVehicleOfInterestLabel_model}"/>
+                    <h:outputText value="#{vehicleOfInterestController.selected.model}" title="#{bundle.ViewVehicleOfInterestTitle_model}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{vehicleOfInterestController.destroyAndView}" value="#{bundle.ViewVehicleOfInterestDestroyLink}"/>
+                <br />
+                <br />
+                <h:link outcome="Edit" value="#{bundle.ViewVehicleOfInterestEditLink}"/>
+                <br />
+                <h:commandLink action="#{vehicleOfInterestController.prepareCreate}" value="#{bundle.ViewVehicleOfInterestCreateLink}" />
+                <br />
+                <h:commandLink action="#{vehicleOfInterestController.prepareList}" value="#{bundle.ViewVehicleOfInterestShowAllLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ViewVehicleOfInterestIndexLink}"/>
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

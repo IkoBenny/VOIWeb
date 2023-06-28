@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateVehicleOfInterestTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateVehicleOfInterestLabel_licensePlate}" for="licensePlate" />
+                    <h:inputText id="licensePlate" value="#{vehicleOfInterestController.selected.licensePlate}" title="#{bundle.CreateVehicleOfInterestTitle_licensePlate}" required="true" requiredMessage="#{bundle.CreateVehicleOfInterestRequiredMessage_licensePlate}"/>
+                    <h:outputLabel value="#{bundle.CreateVehicleOfInterestLabel_vehYear}" for="vehYear" />
+                    <h:inputText id="vehYear" value="#{vehicleOfInterestController.selected.vehYear}" title="#{bundle.CreateVehicleOfInterestTitle_vehYear}" />
+                    <h:outputLabel value="#{bundle.CreateVehicleOfInterestLabel_color}" for="color" />
+                    <h:inputText id="color" value="#{vehicleOfInterestController.selected.color}" title="#{bundle.CreateVehicleOfInterestTitle_color}" />
+                    <h:outputLabel value="#{bundle.CreateVehicleOfInterestLabel_ownersName}" for="ownersName" />
+                    <h:inputText id="ownersName" value="#{vehicleOfInterestController.selected.ownersName}" title="#{bundle.CreateVehicleOfInterestTitle_ownersName}" />
+                    <h:outputLabel value="#{bundle.CreateVehicleOfInterestLabel_ownersPhone}" for="ownersPhone" />
+                    <h:inputText id="ownersPhone" value="#{vehicleOfInterestController.selected.ownersPhone}" title="#{bundle.CreateVehicleOfInterestTitle_ownersPhone}" />
+                    <h:outputLabel value="#{bundle.CreateVehicleOfInterestLabel_reason}" for="reason" />
+                    <h:selectOneMenu id="reason" value="#{vehicleOfInterestController.selected.reason}" title="#{bundle.CreateVehicleOfInterestTitle_reason}" required="true" requiredMessage="#{bundle.CreateVehicleOfInterestRequiredMessage_reason}">
+                        <f:selectItems value="#{reasonForInterestController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.CreateVehicleOfInterestLabel_make}" for="make" />
+                    <h:selectOneMenu id="make" value="#{vehicleOfInterestController.selected.make}" title="#{bundle.CreateVehicleOfInterestTitle_make}" required="true" requiredMessage="#{bundle.CreateVehicleOfInterestRequiredMessage_make}">
+                        <f:selectItems value="#{vehicleMakeController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.CreateVehicleOfInterestLabel_model}" for="model" />
+                    <h:selectOneMenu id="model" value="#{vehicleOfInterestController.selected.model}" title="#{bundle.CreateVehicleOfInterestTitle_model}" required="true" requiredMessage="#{bundle.CreateVehicleOfInterestRequiredMessage_model}">
+                        <f:selectItems value="#{vehicleModelController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{vehicleOfInterestController.create}" value="#{bundle.CreateVehicleOfInterestSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{vehicleOfInterestController.prepareList}" value="#{bundle.CreateVehicleOfInterestShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.CreateVehicleOfInterestIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

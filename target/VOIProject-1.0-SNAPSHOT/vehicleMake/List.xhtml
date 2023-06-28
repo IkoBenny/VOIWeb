@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ListVehicleMakeTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:form styleClass="jsfcrud_list_form">
+                <h:panelGroup id="messagePanel" layout="block">
+                    <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                </h:panelGroup>
+                <h:outputText escape="false" value="#{bundle.ListVehicleMakeEmpty}" rendered="#{vehicleMakeController.items.rowCount == 0}"/>
+                <h:panelGroup rendered="#{vehicleMakeController.items.rowCount > 0}">
+                    <h:outputText value="#{vehicleMakeController.pagination.pageFirstItem + 1}..#{vehicleMakeController.pagination.pageLastItem + 1}/#{vehicleMakeController.pagination.itemsCount}"/>&nbsp;
+                    <h:commandLink action="#{vehicleMakeController.previous}" value="#{bundle.Previous} #{vehicleMakeController.pagination.pageSize}" rendered="#{vehicleMakeController.pagination.hasPreviousPage}"/>&nbsp;
+                    <h:commandLink action="#{vehicleMakeController.next}" value="#{bundle.Next} #{vehicleMakeController.pagination.pageSize}" rendered="#{vehicleMakeController.pagination.hasNextPage}"/>&nbsp;
+                    <h:dataTable value="#{vehicleMakeController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListVehicleMakeTitle_make}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.make}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="&nbsp;"/>
+                            </f:facet>
+                            <h:commandLink action="#{vehicleMakeController.prepareView}" value="#{bundle.ListVehicleMakeViewLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{vehicleMakeController.prepareEdit}" value="#{bundle.ListVehicleMakeEditLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{vehicleMakeController.destroy}" value="#{bundle.ListVehicleMakeDestroyLink}"/>
+                        </h:column>
+                    </h:dataTable>
+                </h:panelGroup>
+                <br />
+                <h:commandLink action="#{vehicleMakeController.prepareCreate}" value="#{bundle.ListVehicleMakeCreateLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ListVehicleMakeIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>
