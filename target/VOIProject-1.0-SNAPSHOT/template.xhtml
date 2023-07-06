@@ -8,10 +8,9 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <title><ui:insert name="title">Vehicles Of Interest [Web]</ui:insert></title>
         <h:form>
-        <h:outputText id ="breadcrumbs" value="Login > "></h:outputText>
-        <h:commandLink value= "Home"><ui:insert>#{bundle.CreateReasonForInterestIndexLink}</ui:insert></h:commandLink>
+            <h:outputText value="Login >"></h:outputText>
+            <h:commandLink action="CreateReasonForInterestIndexLink" value="Home"/>
         </h:form>
-        <br></br>
         <h:graphicImage library ="images" name = "police-shield-badge-19.jfif" alt="Maryland State Police logo" height="300" width="300"/> 
         <h:outputStylesheet library="css" name="jsfcrud.css"/>
     </h:head>
