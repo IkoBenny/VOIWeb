@@ -8,30 +8,16 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <title><ui:insert name="title">Vehicles Of Interest [Web]</ui:insert></title>
         <h:form>
-            <h:outputText value="Login >"></h:outputText>
-            <h:commandLink action="/index.xhtml" value="Home"/>
+            <ui:insert name="breadcrumbs">
+                <h:outputText value="Login >"></h:outputText>
+            </ui:insert>
         </h:form>
         <h:graphicImage library ="images" name = "police-shield-badge-19.jfif" alt="Maryland State Police logo" height="300" width="300"/> 
         <h:outputStylesheet library="css" name="jsfcrud.css"/>
     </h:head>
 
     <h:body>
-        <ui:insert name="content">
-            <h:form>
-                <h:outputText value="VIEW"></h:outputText>
-                <h:outputText value="SEARCH"></h:outputText> 
-                <br></br>
-                <h:commandButton value="View VOI by Make/Models" action="x"/>
-                <h:commandButton value="Search VOI by Driver" action="x"/>
-                <br></br>
-                <h:commandButton value="View VOI by Color" action="x"/>
-                <h:commandButton value="Search VOI by Plate" action="x"/>
-                <br></br>
-                <h:commandButton value="View Driver by VOI" action="x"/> 
-                <h:commandButton value="Search VOI by Make/Model" action="x"/>
-                <br></br>
-
-            </h:form>
+        <ui:insert name="body">
         </ui:insert>
     </h:body>
 

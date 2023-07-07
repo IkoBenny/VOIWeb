@@ -4,5 +4,55 @@
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:h="http://xmlns.jcp.org/jsf/html">
     <ui:composition template="/template.xhtml">
+            <ui:define name="breadcrumbs">
+                <h:outputText value="Login >"></h:outputText>
+                <h:commandLink action="/index.xhtml" value="Home"/>
+            </ui:define>
+     <ui:define name ="body">
+        <br />
+        <h:link outcome="/reasonForInterest/List" value="Show All ReasonForInterest Items"/>
+        <br />
+        <h:link outcome="/vehicleMake/List" value="Show All VehicleMake Items"/>
+        <br />
+        <h:link outcome="/vehicleModel/List" value="Show All VehicleModel Items"/>
+        <br />
+        <h:link outcome="/vehicleOfInterest/List" value="Show All VehicleOfInterest Items"/>
+                <h:form>
+            <h:outputText value="VIEW"></h:outputText>
+            <h:outputText value="SEARCH"></h:outputText> 
+            <br></br>
+            <h:commandButton value="View VOI by Make/Models" action="/vehicleMake/List"/>
+            <h:commandButton value="Search VOI by Driver" action="x"/>
+            <br></br>
+            <h:commandButton value="View VOI by Color" action="x"/>
+            <h:commandButton value="Search VOI by Plate" action="x"/>
+            <br></br>
+            <h:commandButton value="View Driver by VOI" action="x"/> 
+            <h:commandButton value="Search VOI by Make/Model" action="x"/>
+            <br></br>
+
+        </h:form>
+    </ui:define>
     </ui:composition>
+    <ui:insert name ="buttons">
+        <h:form>
+            <h:outputText value="VIEW"></h:outputText>
+            <h:outputText value="SEARCH"></h:outputText> 
+            <br></br>
+            <h:commandButton value="View VOI by Make/Models" action="x"/>
+            <h:commandButton value="Search VOI by Driver" action="x"/>
+            <br></br>
+            <h:commandButton value="View VOI by Color" action="x"/>
+            <h:commandButton value="Search VOI by Plate" action="x"/>
+            <br></br>
+            <h:commandButton value="View Driver by VOI" action="x"/> 
+            <h:commandButton value="Search VOI by Make/Model" action="x"/>
+            <br></br>
+
+        </h:form>
+
+    </ui:insert>
+    
+
+
 </html>
