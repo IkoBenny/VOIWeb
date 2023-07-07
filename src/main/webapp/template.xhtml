@@ -16,6 +16,23 @@
     </h:head>
 
     <h:body>
+        <ui:insert name="content">
+            <h:form>
+                <h:outputText value="VIEW"></h:outputText>
+                <h:outputText value="SEARCH"></h:outputText> 
+                <br></br>
+                <h:commandButton value="View VOI by Make/Models" action="x"/>
+                <h:commandButton value="Search VOI by Driver" action="x"/>
+                <br></br>
+                <h:commandButton value="View VOI by Color" action="x"/>
+                <h:commandButton value="Search VOI by Plate" action="x"/>
+                <br></br>
+                <h:commandButton value="View Driver by VOI" action="x"/> 
+                <h:commandButton value="Search VOI by Make/Model" action="x"/>
+                <br></br>
+
+            </h:form>
+        </ui:insert>
     </h:body>
 
 </html>
