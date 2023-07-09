@@ -9,13 +9,18 @@
         <ui:define name="title">
             <h:outputText value="#{bundle.ListVehicleMakeTitle}"></h:outputText>
         </ui:define>
+        <ui:define name="breadcrumbs">
+            <h:outputText value="Login >"></h:outputText>
+            <h:commandLink action="/index.xhtml" value="Home"/>
+            <h:outputText value=" > View Makes"></h:outputText>
+        </ui:define>
         <ui:define name="body">
             <h:form styleClass="jsfcrud_list_form">
                 <h:panelGroup id="messagePanel" layout="block">
                     <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
                 </h:panelGroup>
                 <h:outputText escape="false" value="#{bundle.ListVehicleMakeEmpty}" rendered="#{vehicleMakeController.items.rowCount == 0}"/>
-                <h:panelGroup rendered="#{vehicleMakeController.items.rowCount > 0}">
+                <h:panelGrid rendered="#{vehicleMakeController.items.rowCount > 0}">
                     <h:outputText value="#{vehicleMakeController.pagination.pageFirstItem + 1}..#{vehicleMakeController.pagination.pageLastItem + 1}/#{vehicleMakeController.pagination.itemsCount}"/>&nbsp;
                     <h:commandLink action="#{vehicleMakeController.previous}" value="#{bundle.Previous} #{vehicleMakeController.pagination.pageSize}" rendered="#{vehicleMakeController.pagination.hasPreviousPage}"/>&nbsp;
                     <h:commandLink action="#{vehicleMakeController.next}" value="#{bundle.Next} #{vehicleMakeController.pagination.pageSize}" rendered="#{vehicleMakeController.pagination.hasNextPage}"/>&nbsp;
@@ -37,7 +42,7 @@
                             <h:commandLink action="#{vehicleMakeController.destroy}" value="#{bundle.ListVehicleMakeDestroyLink}"/>
                         </h:column>
                     </h:dataTable>
-                </h:panelGroup>
+                </h:panelGrid>
                 <br />
                 <h:commandLink action="#{vehicleMakeController.prepareCreate}" value="#{bundle.ListVehicleMakeCreateLink}"/>
                 <br />
