@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/XHtml.xhtml to edit this template
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+            xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">>>
+    <ui:composition template="/template.xhtml">
+               <ui:define name="breadcrumbs">
+            <h:outputText value="Login > "></h:outputText>
+            <h:commandLink action="/index.xhtml" value="Home"/>
+            <h:outputText value=" > View Color"></h:outputText>
+        </ui:define>
+                <ui:define name ="body">
+            <h:form>
+                <h:commandLink action="/index.xhtml" value="Select Color "/>
+                <h:outputText value="     "></h:outputText>
+                <h:outputText value=" > Results"></h:outputText>
+                                <br></br>
+                <br></br>
+                <br></br>
+                <h:outputText value="Select Color to view VOIs"></h:outputText>
+                <br></br>
+                <h:selectOneListbox></h:selectOneListbox>
+                <br></br>
+                <h:panelGrid columns ="2">                
+                    <h:commandButton value="Next" action="MakeModel"/>
+                    <h:commandButton value="Filter" action="MakeModel"/>
+                </h:panelGrid>
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+</html>
