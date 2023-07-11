@@ -6,19 +6,21 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/XHtml.xhtml to edit t
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">>
+      xmlns:h="http://xmlns.jcp.org/jsf/html"            
+      xmlns:f="http://xmlns.jcp.org/jsf/core">>
     <ui:composition template="/template.xhtml">
         <ui:define name="breadcrumbs">
             <h:outputText value="Login > "></h:outputText>
             <h:commandLink action="/index.xhtml" value="Home"/>
-            <h:outputText value=" > View Make/Model"></h:outputText>
+            <h:outputText value="      >"></h:outputText>
+            <h:commandLink action="MakeModel" value="  View Make/Model"></h:commandLink>
 
         </ui:define>
         <ui:define name ="body">
             <h:form>
-                <h:commandLink action="/index.xhtml" value="Select Make >"/>
-                <h:outputText value="     "></h:outputText>
-                <h:commandLink action="/index.xhtml" value="Select Model"/>
+                <h:commandLink action="MakeModel" value="Select Make"/>
+                <h:outputText value="      >"></h:outputText>
+                <h:commandLink action="ViewModel" value="Select Model"/>
                 <h:outputText value=" > Results"></h:outputText>
                                 <br></br>
                 <br></br>
@@ -27,15 +29,16 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/XHtml.xhtml to edit t
                 <br></br>
                 <br></br>
                 <br></br>
-                <h:outputText value="Select Model to filter VOIs"></h:outputText>
+                <h:outputText value="Select Make to filter VOIs"></h:outputText>
                 <br></br>
-                <h:selectOneListbox></h:selectOneListbox>
+                <h:selectOneListbox>
+                    <f:selectItems/>
+                </h:selectOneListbox>
                 <br></br>
                 <h:panelGrid columns ="2">                
                     <h:commandButton value="Next" action="MakeModel"/>
                     <h:commandButton value="Search" action="MakeModel"/>
                 </h:panelGrid>
-
             </h:form>
         </ui:define>
     </ui:composition>

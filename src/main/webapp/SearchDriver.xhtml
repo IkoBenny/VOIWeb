@@ -15,7 +15,8 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/XHtml.xhtml to edit t
         <ui:define name="breadcrumbs">
             <h:outputText value="Login > "></h:outputText>
             <h:commandLink action="/index.xhtml" value="Home"/>
-            <h:outputText value=" > Search Driver"></h:outputText>
+            <h:outputText value="    > "></h:outputText>
+            <h:commandLink action="SearchDriver" value="Search Driver"/>
         </ui:define>
         <ui:define name ="body">
             <h:form>
@@ -28,10 +29,10 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/XHtml.xhtml to edit t
                 <h:outputText value="Enter name to search VOIs"></h:outputText>
                 <br></br>
 
-                <h:inputText></h:inputText>
+                <h:inputText required="yes"></h:inputText>
                 <br></br>
                 <h:panelGrid columns ="2">                
-                    <h:commandButton value="Next" action="MakeModel"/>
+                    <h:commandButton    type="submit" value="Next" action="MakeModel"/>
                     <h:commandButton value="Filter" action="MakeModel"/>
                 </h:panelGrid>
 

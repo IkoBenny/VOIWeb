@@ -11,14 +11,14 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/XHtml.xhtml to edit t
         <ui:define name="breadcrumbs">
             <h:outputText value="Login > "></h:outputText>
             <h:commandLink action="/index.xhtml" value="Home"/>
-            <h:outputText value=" > Search Make/Model"></h:outputText>
-
+            <h:outputText value=" > "></h:outputText>
+            <h:commandLink action="SearchMakeModel" value="  Search Make/Model"></h:commandLink>
         </ui:define>
         <ui:define name ="body">
             <h:form>
-                <h:commandLink action="/index.xhtml" value="Search Make >"/>
-                <h:outputText value="     "></h:outputText>
-                <h:commandLink action="/index.xhtml" value="Search Model"/>
+                <h:commandLink action="SearchMakeModel" value="Search Make"/>
+                <h:outputText value="     > "></h:outputText>
+                <h:commandLink action="SearchModel" value="Search Model"/>
                 <h:outputText value=" > Results"></h:outputText>
                 <br></br>
                 <br></br>
