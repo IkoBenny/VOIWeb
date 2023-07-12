@@ -4,6 +4,7 @@ import com.desktop.model.ReasonForInterest;
 import model.util.JsfUtil;
 import model.util.PaginationHelper;
 import controller.ReasonForInterestJpaController;
+import javax.faces.convert.Converter;
 
 import java.io.Serializable;
 import java.util.ResourceBundle;

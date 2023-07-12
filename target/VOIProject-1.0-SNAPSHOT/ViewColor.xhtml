@@ -9,24 +9,24 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/XHtml.xhtml to edit t
       xmlns:h="http://xmlns.jcp.org/jsf/html">>>
     <ui:composition template="/template.xhtml">
                <ui:define name="breadcrumbs">
-            <h:outputText value="Login > "></h:outputText>
+            <h:outputText class="crumbsMakeModel" value="Login > "></h:outputText>
             <h:commandLink action="/index.xhtml" value="Home"/>
             <h:outputText value="      > "></h:outputText>
             <h:commandLink action="ViewColor" value="View Color"/>
         </ui:define>
                 <ui:define name ="body">
             <h:form>
-                <h:commandLink action="ViewColor" value="Select Color "/>
+                <h:commandLink class="crumbsMakeModel" action="ViewColor" value="Select Color "/>
                 <h:outputText value="     "></h:outputText>
                 <h:outputText value=" > Results"></h:outputText>
                                 <br></br>
                 <br></br>
                 <br></br>
-                <h:outputText value="Select Color to view VOIs"></h:outputText>
+                <h:outputText class="middleComponents" value="Select Color to view VOIs"></h:outputText>
                 <br></br>
-                <h:selectOneListbox></h:selectOneListbox>
+                <h:selectOneListbox class="middleComponents"></h:selectOneListbox>
                 <br></br>
-                <h:panelGrid columns ="2">                
+                <h:panelGrid class="rightButtons" columns ="2">                
                     <h:commandButton value="Next" action="MakeModel"/>
                     <h:commandButton value="Filter" action="MakeModel"/>
                 </h:panelGrid>

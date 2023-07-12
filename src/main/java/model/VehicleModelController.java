@@ -10,6 +10,7 @@ import java.util.ResourceBundle;
 import javax.annotation.Resource;
 import javax.inject.Named;
 import javax.enterprise.context.SessionScoped;
+import javax.faces.bean.ManagedBean;
 import javax.faces.component.UIComponent;
 import javax.faces.context.FacesContext;
 import javax.faces.convert.Converter;
@@ -23,6 +24,7 @@ import javax.transaction.UserTransaction;
 
 @Named("vehicleModelController")
 @SessionScoped
+@ManagedBean
 public class VehicleModelController implements Serializable {
 
     @Resource

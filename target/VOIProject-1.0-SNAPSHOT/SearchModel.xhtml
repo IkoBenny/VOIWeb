@@ -9,31 +9,31 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/XHtml.xhtml to edit t
       xmlns:h="http://xmlns.jcp.org/jsf/html">>
     <ui:composition template="/template.xhtml">
         <ui:define name="breadcrumbs">
-            <h:outputText value="Login > "></h:outputText>
+            <h:outputText class="crumbsMakeModel" value="Login > "></h:outputText>
             <h:commandLink action="/index.xhtml" value="Home"/>
             <h:outputText value=" > "></h:outputText>
             <h:commandLink action="SearchMakeModel" value="  Search Make/Model"></h:commandLink>
         </ui:define>
         <ui:define name ="body">
             <h:form>
-                <h:commandLink action="SearchMakeModel" value="Search Make"/>
+                <h:commandLink class="crumbsMakeModel" action="SearchMakeModel" value="Search Make"/>
                 <h:outputText value="     > "></h:outputText>
                 <h:commandLink action="/index.xhtml" value="Search Model"/>
                 <h:outputText value=" > Results"></h:outputText>
                 <br></br>
                 <br></br>
                 <br></br>
-                <h:outputText value="Search VOI by Make/Model"></h:outputText>
+                <h:outputText class ="middleComponents" value="Search VOI by Make/Model"></h:outputText>
                 <br></br>
                 <br></br>
                 <br></br>
-                <h:outputText value="Enter Model to filter VOIs"></h:outputText>
+                <h:outputText class ="middleComponents" value="Enter Model to filter VOIs"></h:outputText>
                 <br></br>
-                <h:selectOneListbox></h:selectOneListbox>
+                <h:selectOneListbox class ="middleComponents"></h:selectOneListbox>
                 <br></br>
-                <h:panelGrid columns ="2">                
-                    <h:commandButton value="Next" action="MakeModel"/>
-                    <h:commandButton value="Search" action="MakeModel"/>
+                <h:panelGrid class= "rightButtons" columns ="2">                
+                    <h:commandButton class= "rightButtons" value="Next" action="MakeModel"/>
+                    <h:commandButton class= "rightButtons" value="Search" action="MakeModel"/>
                 </h:panelGrid>
             </h:form>
         </ui:define>

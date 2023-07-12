@@ -13,7 +13,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/XHtml.xhtml to edit t
                     xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
                     xmlns:h="http://xmlns.jcp.org/jsf/html">
         <ui:define name="breadcrumbs">
-            <h:outputText value="Login > "></h:outputText>
+            <h:outputText class="crumbsMakeModel" value="Login > "></h:outputText>
             <h:commandLink action="/index.xhtml" value="Home"/>
             <h:outputText value="    > "></h:outputText>
             <h:commandLink action="SearchDriver" value="Search Driver"/>
@@ -21,17 +21,17 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/XHtml.xhtml to edit t
         <ui:define name ="body">
             <h:form>
                
-                <h:commandLink action="SearchDriver" value="Driver"/>
+                <h:commandLink class="crumbsMakeModel" action="SearchDriver" value="Driver"/>
                 <h:outputText value=" > Results"></h:outputText>
                 <br></br>
                 <br></br>
                 <br></br>
-                <h:outputText value="Enter name to search VOIs"></h:outputText>
+                <h:outputText class ="middleComponents" value="Enter name to search VOIs"></h:outputText>
                 <br></br>
 
-                <h:inputText required="yes"></h:inputText>
+                <h:inputText class ="middleComponents" required="yes"></h:inputText>
                 <br></br>
-                <h:panelGrid columns ="2">                
+                <h:panelGrid class= "rightButtons" columns ="2">                
                     <h:commandButton    type="submit" value="Next" action="MakeModel"/>
                     <h:commandButton value="Filter" action="MakeModel"/>
                 </h:panelGrid>

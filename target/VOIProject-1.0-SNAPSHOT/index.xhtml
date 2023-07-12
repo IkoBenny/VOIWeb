@@ -5,14 +5,22 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html">
     <ui:composition template="/template.xhtml">
         <ui:define name="breadcrumbs">
-            <h:outputText value="Login > "></h:outputText>
+            <h:outputText class="crumbsindex" value="Login > "></h:outputText>
             <h:commandLink action="/index.xhtml" value="Home"/>
         </ui:define>
         <ui:define name ="body">
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+                            <h:outputText class="headers" value="VIEW"></h:outputText>
+                <h:outputText class="headers" value="SEARCH"></h:outputText>
             <h:form>
-                <h:panelGrid columns ="2">
-                    <h:outputText value="VIEW"></h:outputText>
-                    <h:outputText value="SEARCH"></h:outputText> 
+                <h:panelGrid class="buttons" columns ="2">
                     <h:commandButton value="View VOI by Make/Models" action="MakeModel"/>
                     <h:commandButton value="Search VOI by Driver" action="SearchDriver"/>
                     <h:commandButton value="View VOI by Color" action="ViewColor"/>

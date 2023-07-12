@@ -17,6 +17,40 @@ table {
     empty-cells: show;
 }
 
+.buttons {
+    border: solid 3px black;
+    background-color: white;
+    margin-left: 20%;
+    margin-top: 2%;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+.middleComponents {
+    margin-left: 30%;
+    margin-top: 2%;
+}
+
+.rightButtons {
+    margin-left: 60%;
+}
+
+.headers {
+    padding-left: 30%;
+}
+
+div {
+    grid-auto-flow:dense;
+}
+
+.crumbsindex {
+    padding-left: 80%;
+}
+
+.crumbsMakeModel {
+    padding-left: 60%;
+}
+
 form.jsfcrud_list_form th, td th {
     font-size: x-small;
     color: #4e6a71;
